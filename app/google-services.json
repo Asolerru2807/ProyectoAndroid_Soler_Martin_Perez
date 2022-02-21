@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "31692973871",
+    "firebase_url": "https://bdproyectofinal-4d822-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "bdproyectofinal-4d822",
+    "storage_bucket": "bdproyectofinal-4d822.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31692973871:android:ea9ee88fcf6f87f225e3da",
+        "android_client_info": {
+          "package_name": "com.example.proyectoandroid_soler_martin_perez"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "31692973871-u2i128h9puatio3e9lc7g411585650pg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvP1y8LuJy4QdzJzzmKHY7JowFJ8gtZYQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "31692973871-u2i128h9puatio3e9lc7g411585650pg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
