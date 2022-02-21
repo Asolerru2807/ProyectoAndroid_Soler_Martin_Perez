@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/migue/AndroidStudioProjects/ProyectoAndroid_Soler_Martin_Perez/app/src/main/res/layout/activity_main.xml" value="0.176" />
-        <entry key="..\:/Users/migue/AndroidStudioProjects/ProyectoAndroid_Soler_Martin_Perez/app/src/main/res/layout/pagina_web.xml" value="0.25" />
+        <entry key="..\:/Users/DAM2A/AndroidStudioProjects/ProyectoAndroid_Soler_Martin_Perez/app/src/main/res/drawable/bordes_redondos.xml" value="0.3425" />
+        <entry key="..\:/Users/DAM2A/AndroidStudioProjects/ProyectoAndroid_Soler_Martin_Perez/app/src/main/res/layout/menu.xml" value="0.33" />
+        <entry key="..\:/Users/DAM2A/AndroidStudioProjects/ProyectoAndroid_Soler_Martin_Perez/app/src/main/res/layout/pagina_web.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
