@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/caqui/AndroidStudioProjects/ProyectoAndroid_Soler_Martin_Perez/app/src/main/res/layout/activity_usuario_creado.xml" value="0.2151268115942029" />
-        <entry key="..\:/Users/caqui/AndroidStudioProjects/ProyectoAndroid_Soler_Martin_Perez/app/src/main/res/layout/new_user_menu.xml" value="0.2151268115942029" />
+        <entry key="..\:/Users/migue/AndroidStudioProjects/ProyectoAndroid_Soler_Martin_Perez/app/src/main/res/drawable/bordes_redondos.xml" value="0.1505" />
+        <entry key="..\:/Users/migue/AndroidStudioProjects/ProyectoAndroid_Soler_Martin_Perez/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/Users/migue/AndroidStudioProjects/ProyectoAndroid_Soler_Martin_Perez/app/src/main/res/layout/gmail_sugerencias.xml" value="0.25" />
+        <entry key="..\:/Users/migue/AndroidStudioProjects/ProyectoAndroid_Soler_Martin_Perez/app/src/main/res/layout/pagina_web.xml" value="0.25" />
       </map>
     </option>
   </component>
