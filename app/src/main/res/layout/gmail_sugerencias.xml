@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/emailUser"
+            android:layout_width="277dp"
+            android:layout_height="51dp"
+            android:backgroundTint="#9C27B0"
+            android:drawableTint="#FFFDFD"
+            android:ems="10"
+            android:hint="Email: "
+            android:inputType="textEmailAddress"
+            android:textColor="#FDFCFC"
+            android:textColorHint="@color/white">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="277dp"
+            android:layout_height="51dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Nombre: "
+            android:backgroundTint="#9C27B0"
+            android:drawableTint="#FFFDFD"
+            android:textColor="#FDFCFC"
+            android:textColorHint="@color/white"/>
+
+        <EditText
+            android:id="@+id/editTextAsunto"
+            android:layout_width="277dp"
+            android:layout_height="51dp"
+            android:ems="140"
+            android:hint="Asunto: "
+            android:backgroundTint="#9C27B0"
+            android:drawableTint="#FFFDFD"
+            android:textColor="#FDFCFC"
+            android:textColorHint="@color/white">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/editTextMensaje"
+            android:layout_width="277dp"
+            android:layout_height="51dp"
+            android:ems="140"
+            android:hint="Mensaje: "
+            android:backgroundTint="#9C27B0"
+            android:drawableTint="#FFFDFD"
+            android:textColor="#FDFCFC"
+            android:textColorHint="@color/white">
+
+        </EditText>
+
+        <Button
+            android:id="@+id/Enviar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enviar"
+            android:textColor="#FDFCFC"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
