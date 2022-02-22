@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ProyectoAndroid_Soler_Martin_Perez</string>
+    <string name="miPerfil">Mi Perfil</string>
+    <string name="tiendas">Tiendas</string>
+    <string name="consumo">Consumo</string>
+    <string name="web">Web</string>
+    <string name="sugerencias">Sugerencias</string>
+    <string name="bienvenida">Bienvenido:</string>
 </resources>

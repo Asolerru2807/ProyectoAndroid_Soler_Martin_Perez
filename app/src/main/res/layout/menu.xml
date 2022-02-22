@@ -13,74 +13,98 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="49dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="61dp"
+        android:layout_marginEnd="27dp"
         android:fontFamily="@font/advent_pro_medium"
         android:gravity="center"
-        android:text="ZARAGOZA TELECOM"
+        android:text="@string/bienvenida"
         android:textColor="#FFFFFF"
         android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/botonUsuario"
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Titulo"
+        android:layout_alignBottom="@+id/botonTiendas"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="-28dp"
+        android:layout_marginTop="83dp"
+        android:layout_marginBottom="84dp"
+        android:background="@drawable/bordes_redondos"
+        android:fontFamily="@font/cuprum"
+        android:text="@string/miPerfil"
+        android:visibility="visible" />
 
     <Button
         android:id="@+id/botonTiendas"
         android:layout_width="209dp"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/botonConsumo"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="-29dp"
-        android:layout_marginTop="284dp"
+        android:layout_marginTop="275dp"
+        android:layout_marginBottom="85dp"
         android:background="@drawable/bordes_redondos"
         android:fontFamily="@font/cuprum"
-        android:text="Tiendas" />
+        android:text="@string/tiendas" />
 
     <Button
-        android:id="@+id/Gastos"
+        android:id="@+id/botonConsumo"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/botonWeb"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="-29dp"
-        android:layout_marginTop="369dp"
+        android:layout_marginTop="360dp"
+        android:layout_marginBottom="85dp"
         android:background="@drawable/bordes_redondos"
         android:fontFamily="@font/cuprum"
-        android:text="consumo" />
+        android:text="@string/consumo" />
 
     <Button
-        android:id="@+id/gastos"
+        android:id="@+id/botonWeb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/botonSugerencias"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="-30dp"
-        android:layout_marginTop="454dp"
+        android:layout_marginTop="445dp"
+        android:layout_marginBottom="85dp"
         android:background="@drawable/bordes_redondos"
         android:fontFamily="@font/cuprum"
-        android:text="Web" />
+        android:text="@string/web" />
 
     <Button
-        android:id="@+id/botonUsuario"
-        android:layout_width="181dp"
-        android:layout_height="59dp"
+        android:id="@+id/botonSugerencias"
+        android:layout_width="297dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/botonCerrarSesion"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="-28dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginStart="-30dp"
+        android:layout_marginTop="531dp"
+        android:layout_marginBottom="98dp"
         android:background="@drawable/bordes_redondos"
         android:fontFamily="@font/cuprum"
-        android:text="Usuario"
-        android:visibility="visible" />
+        android:text="@string/sugerencias" />
 
     <Button
-        android:id="@+id/cerrarSesion"
+        android:id="@+id/botonCerrarSesion"
         android:layout_width="wrap_content"
         android:layout_height="38dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="121dp"
         android:layout_marginTop="651dp"
         android:layout_marginEnd="122dp"
+        android:layout_marginBottom="42dp"
         android:background="@drawable/bordes_redondos"
         android:fontFamily="@font/cuprum"
         android:text="Cerrar Sesion"
