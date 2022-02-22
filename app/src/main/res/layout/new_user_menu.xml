@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -9,28 +11,28 @@
         android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre: ">
-    </EditText>
+        android:hint="Nombre: "
+        android:minHeight="48dp"></EditText>
 
     <EditText
         android:id="@+id/editTextCorreo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="Correo: ">
-    </EditText>
+        android:hint="Correo: "
+        android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/editTextPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="Password: ">
-    </EditText>
+        android:hint="Password: "
+        android:minHeight="48dp"/>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="542dp"
         android:gravity="bottom"
         android:orientation="vertical">
 
@@ -38,11 +40,28 @@
             android:id="@+id/btnRegistrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Registrar Usuario"
             android:background="#9547AF"
-            android:textColor="@color/white">
+            android:text="Registrar Usuario"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/btnLogOut"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.058"
+            tools:layout_editor_absoluteX="0dp">
 
         </Button>
-    </LinearLayout>
+
+        <Button
+            android:id="@+id/btnLogOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#9547AF"
+            android:text="Cerrar Sesion"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="0dp">
+
+        </Button>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>
