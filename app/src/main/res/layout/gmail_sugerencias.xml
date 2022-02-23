@@ -7,13 +7,17 @@
     android:background="@color/black">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_width="391dp"
+        android:layout_height="433dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127"
+        tools:layout_editor_absoluteX="1dp">
 
         <EditText
             android:id="@+id/emailUser"
-            android:layout_width="277dp"
+            android:layout_width="match_parent"
             android:layout_height="51dp"
             android:backgroundTint="#9C27B0"
             android:drawableTint="#FFFDFD"
@@ -26,25 +30,13 @@
         </EditText>
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="277dp"
+            android:id="@+id/editTextAsunto"
+            android:layout_width="match_parent"
             android:layout_height="51dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Nombre: "
             android:backgroundTint="#9C27B0"
             android:drawableTint="#FFFDFD"
-            android:textColor="#FDFCFC"
-            android:textColorHint="@color/white"/>
-
-        <EditText
-            android:id="@+id/editTextAsunto"
-            android:layout_width="277dp"
-            android:layout_height="51dp"
             android:ems="140"
             android:hint="Asunto: "
-            android:backgroundTint="#9C27B0"
-            android:drawableTint="#FFFDFD"
             android:textColor="#FDFCFC"
             android:textColorHint="@color/white">
 
@@ -52,23 +44,38 @@
 
         <EditText
             android:id="@+id/editTextMensaje"
-            android:layout_width="277dp"
-            android:layout_height="51dp"
-            android:ems="140"
-            android:hint="Mensaje: "
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
             android:backgroundTint="#9C27B0"
             android:drawableTint="#FFFDFD"
+            android:ems="140"
+            android:hint="Mensaje: "
             android:textColor="#FDFCFC"
             android:textColorHint="@color/white">
 
         </EditText>
 
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="535dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="273dp">
+
         <Button
             android:id="@+id/Enviar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="254dp"
+            android:layout_height="49dp"
+            android:backgroundTint="#852AE0"
             android:text="Enviar"
-            android:textColor="#FDFCFC"/>
-    </LinearLayout>
+            android:textColor="#FDFCFC"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.448" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

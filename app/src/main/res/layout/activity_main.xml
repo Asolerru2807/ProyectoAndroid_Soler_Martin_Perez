@@ -8,21 +8,36 @@
     tools:context=".Menu">
 
     <TextView
+        android:id="@+id/marca"
+        android:layout_width="356dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="28dp"
+        android:text="     ZARAGOZA TELECOM"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.439" />
+
+    <TextView
         android:id="@+id/textView"
         android:layout_width="289dp"
         android:layout_height="48dp"
+        android:layout_marginTop="128dp"
         android:text="     INICIO SESIÓN"
         android:textColor="@color/white"
         android:textSize="30dp"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.614"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.882" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/editTextTextEmailAddress"
         android:layout_width="261dp"
         android:layout_height="56dp"
         android:backgroundTint="#9C27B0"

@@ -10,19 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name=".miPerfil"
-            android:exported="false" />
-        <activity
             android:name=".consumos"
             android:exported="false" />
         <activity
             android:name=".usuario_creado"
             android:exported="false" />
         <activity
-            android:name=".pagina_web"
-            android:exported="false" />
-        <activity
-            android:name=".Menu"
+            android:name=".Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

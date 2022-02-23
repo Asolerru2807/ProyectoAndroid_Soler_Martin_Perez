@@ -11,7 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Buzon_Sugerencias extends AppCompatActivity {
     Button button;
-    EditText correo, asunto, mensaje, nombre;
+    EditText correo, asunto, mensaje;
+    String correoEmpresa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,22 +22,27 @@ public class Buzon_Sugerencias extends AppCompatActivity {
         correo = findViewById(R.id.emailUser);
         asunto = findViewById(R.id.editTextAsunto);
         mensaje = findViewById(R.id.editTextMensaje);
-        nombre = findViewById(R.id.editTextTextPersonName);
+        correoEmpresa = "miguelmartin2694@gmail.com";
+
         button = findViewById(R.id.Enviar);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 mandarCorreo();
             }
         });
 
     }
     private void mandarCorreo(){
-        //Intent email = new Intent(Intent.ACTION_SEND);
-        //email.setData(Uri.parse("mailto: "));
-        //email.setType("text/plain");
-        //email.putExtra(Intent.EXTRA_EMAIL.);
+        Intent email = new Intent(Intent.ACTION_SENDTO);
+        email.setData(Uri.parse("mailto: "));
+        email.setType("text/plain");
+        email.putExtra(Intent.EXTRA_EMAIL, new String[]{correo.getText().toString()} );
+        email.putExtra(Intent.EXTRA_SUBJECT, asunto.getText().toString());
+        email.putExtra(Intent.EXTRA_TEXT, mensaje.getText().toString());
+        startActivity(Intent.createChooser(email, "Send"));
 
     }
 
