@@ -31,7 +31,6 @@ public class newUserMenu extends AppCompatActivity {
     private String nombre;
     private String correo;
     private String pass;
-    private String rol;
 
     FirebaseAuth mAuth;
     DatabaseReference mDataBase;
@@ -55,7 +54,6 @@ public class newUserMenu extends AppCompatActivity {
                 nombre = mEditTextNombre.getText().toString();
                 correo = mEditTextCorreo.getText().toString();
                 pass = mEditTextPass.getText().toString();
-                rol = "usuario";
 
                 if(!nombre.isEmpty() && !correo.isEmpty() && !pass.isEmpty()){
                     if(pass.length() >= 6){
@@ -81,11 +79,10 @@ public class newUserMenu extends AppCompatActivity {
                     map.put("nombre", nombre);
                     map.put("correo", correo);
                     map.put("pass", pass);
-                    map.put("rol", rol);
 
-                    String id = mAuth.getCurrentUser().getUid();
+                    //String id = mAuth.getCurrentUser().getUid();
 
-                    mDataBase.child("Users").child(id).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    mDataBase.child("Users").child("Clientes").child(nombre).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task2) {
                             if(task2.isSuccessful()){

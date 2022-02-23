@@ -3,14 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/ANDROID PROJECTOS/PROYECTOFINAL/app/src/main/res/drawable/bordes_redondos.xml" value="0.312" />
-        <entry key="..\:/ANDROID PROJECTOS/PROYECTOFINAL/app/src/main/res/layout/activity_consumos.xml" value="0.2749094202898551" />
-        <entry key="..\:/ANDROID PROJECTOS/PROYECTOFINAL/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/ANDROID PROJECTOS/PROYECTOFINAL/app/src/main/res/layout/activity_mi_perfil.xml" value="0.36666666666666664" />
-        <entry key="..\:/ANDROID PROJECTOS/PROYECTOFINAL/app/src/main/res/layout/menu.xml" value="0.5" />
-        <entry key="..\:/ANDROID PROJECTOS/PROYECTOFINAL/app/src/main/res/layout/mi_perfil.xml" value="0.36666666666666664" />
-        <entry key="..\:/ANDROID PROJECTOS/PROYECTOFINAL/app/src/main/res/layout/new_user_menu.xml" value="0.36666666666666664" />
-        <entry key="..\:/ANDROID PROJECTOS/PROYECTOFINAL/app/src/main/res/layout/pagina_web.xml" value="0.2749094202898551" />
+        <entry key="..\:/Users/caqui/AndroidStudioProjects/ProyectoAndroid_Soler_Martin_Perez/app/src/main/res/layout/activity_consumos.xml" value="0.264" />
+        <entry key="..\:/Users/caqui/AndroidStudioProjects/ProyectoAndroid_Soler_Martin_Perez/app/src/main/res/layout/activity_mapa.xml" value="0.1" />
         <entry key="..\:/Users/caqui/AndroidStudioProjects/ProyectoAndroid_Soler_Martin_Perez/app/src/main/res/layout/activity_usuario_creado.xml" value="0.2151268115942029" />
         <entry key="..\:/Users/caqui/AndroidStudioProjects/ProyectoAndroid_Soler_Martin_Perez/app/src/main/res/layout/new_user_menu.xml" value="0.2151268115942029" />
         <entry key="..\:/Users/migue/AndroidStudioProjects/ProyectoAndroid_Soler_Martin_Perez/app/src/main/res/layout/activity_main.xml" value="0.17255434782608695" />
