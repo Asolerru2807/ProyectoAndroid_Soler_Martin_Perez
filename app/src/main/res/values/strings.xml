@@ -6,4 +6,5 @@
     <string name="web">Web</string>
     <string name="sugerencias">Sugerencias</string>
     <string name="bienvenida">Bienvenido:</string>
+    <string name="nombre">nombre:</string>
 </resources>
