@@ -1,6 +1,7 @@
 package com.example.proyectoandroid_soler_martin_perez;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +28,7 @@ public class newUserMenu extends AppCompatActivity {
     private EditText mEditTextCorreo;
     private EditText mEditTextPass;
     private Button btnRegistrar;
+    private Button btnCerrar;
 
     private String nombre;
     private String correo;
@@ -47,6 +49,7 @@ public class newUserMenu extends AppCompatActivity {
         mEditTextCorreo = (EditText) findViewById(R.id.editTextCorreo);
         mEditTextPass = (EditText) findViewById(R.id.editTextPass);
         btnRegistrar = (Button) findViewById(R.id.btnRegistrar);
+        btnCerrar = (Button) findViewById(R.id.btnLogOut);
 
         btnRegistrar.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -66,6 +69,15 @@ public class newUserMenu extends AppCompatActivity {
                 }else{
                     Toast.makeText(newUserMenu.this, "No puede haber campos vacios!", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        btnCerrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = getSharedPreferences("datos", MODE_PRIVATE).edit();
+                editor.clear().apply();
+                Intent intent = new Intent(newUserMenu.this, Login.class);
+                startActivity(intent);
             }
         });
     }

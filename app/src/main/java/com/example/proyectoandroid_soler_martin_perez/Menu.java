@@ -3,6 +3,7 @@ package com.example.proyectoandroid_soler_martin_perez;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -67,8 +68,10 @@ public class Menu extends AppCompatActivity {
 
         botonCerrarSesion.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                //Intent intent = new Intent(Menu.this, activity_main.class);
-                //startActivity(intent);
+                SharedPreferences.Editor editor = getSharedPreferences("datos", MODE_PRIVATE).edit();
+                editor.clear().apply();
+                Intent intent = new Intent(Menu.this, Login.class);
+                startActivity(intent);
             }
         });
 
