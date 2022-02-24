@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
 public class Menu extends AppCompatActivity {
 
     @Override
@@ -23,9 +26,12 @@ public class Menu extends AppCompatActivity {
 
         Button botonWeb = (Button) findViewById(R.id.botonWeb);
 
-        Button botonSugerencias = (Button) findViewById(R.id.botonSugerencias);
+        Button botonTiendas = (Button) findViewById(R.id.botonTiendas);
 
         Button botonCerrarSesion = (Button) findViewById(R.id.botonCerrarSesion);
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+
 
 
 
@@ -45,11 +51,35 @@ public class Menu extends AppCompatActivity {
 
         botonWeb.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
+
                 Intent intent = new Intent(Menu.this, pagina_web.class);
+                startActivity(intent);
+
+            }
+        });
+
+        botonTiendas.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(Menu.this, Mapa.class);
                 startActivity(intent);
             }
         });
 
+        botonCerrarSesion.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                //Intent intent = new Intent(Menu.this, activity_main.class);
+                //startActivity(intent);
+            }
+        });
+
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Menu.this, miPerfil.class);
+                startActivity(intent);;
+            }
+        });
 
 
     }

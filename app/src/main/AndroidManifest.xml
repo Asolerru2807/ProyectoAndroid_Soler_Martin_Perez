@@ -22,10 +22,10 @@
             android:name=".pagina_web"
             android:exported="false" />
         <activity
-            android:name=".Menu"
+            android:name=".Mapa"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".newUserMenu"
             android:exported="false" />
         <activity
             android:name=".Buzon_Sugerencias"
@@ -34,10 +34,10 @@
             android:name=".miPerfil"
             android:exported="false" />
         <activity
-            android:name=".newUserMenu"
+            android:name=".Login"
             android:exported="false" />
         <activity
-            android:name=".Mapa"
+            android:name=".Menu"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
