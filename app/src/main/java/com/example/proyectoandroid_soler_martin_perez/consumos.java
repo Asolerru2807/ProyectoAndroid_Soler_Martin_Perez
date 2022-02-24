@@ -1,9 +1,12 @@
 package com.example.proyectoandroid_soler_martin_perez;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -16,26 +19,48 @@ public class consumos extends AppCompatActivity {
     private static RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private static RecyclerView recyclerView;
-    private static ArrayList<DataConsumos> data;
-    static View.OnClickListener myOnClickListener;
+
+    SharedPreferences datos;
+    String usuarioLogeado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consumos);
 
-        creacionDatos();
+        recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        recyclerView.setHasFixedSize(true);
 
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
 
+        ArrayList<DataConsumos> data = creacionDatos();
+        ArrayList<DataConsumos> datosUsuarioLogeado = new ArrayList<>();
+
+        datos = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        usuarioLogeado = datos.getString("usuario", "");
+
+        for (int i = 0; i < data.size(); i++){
+            DataConsumos datoActual = data.get(i);
+            if(datoActual.getCorreo().equals(usuarioLogeado)){
+                datosUsuarioLogeado.add(datoActual);
+            }
+        }
+
+        adapter = new AdapterConsumos(datosUsuarioLogeado);
+        recyclerView.setAdapter(adapter);
 
     }
 
-    public void creacionDatos(){
+    public ArrayList<DataConsumos> creacionDatos(){
         /*
          * Orden de introduccion de los datos:
          * double datosConsumidos, double costeDatos, double costeLlamadas, double costeMensajes,
          * int minutosLlamadas, int mensajesEnviados, String correo, String dia
          */
+        ArrayList<DataConsumos> data = new ArrayList();
+
         data.add(new DataConsumos(90.5, 0, 0.5, 0.25,30, 1, "benjamin@gmail.com","24/02"));
         data.add(new DataConsumos(200, 0, 0, 0,0, 0, "benjamin@gmail.com","23/02"));
         data.add(new DataConsumos(150.3, 0, 0, 0,0, 0, "benjamin@gmail.com","22/02"));
@@ -65,6 +90,8 @@ public class consumos extends AppCompatActivity {
         data.add(new DataConsumos(90.5, 0, 0.56, 0,52, 0, "julian_usr@gmail.com","22/02"));
         data.add(new DataConsumos(95.3, 0, 0, 0,0, 0, "julian_usr@gmail.com","21/02"));
         data.add(new DataConsumos(40.4, 0, 0, 0,0, 0, "julian_usr@gmail.com","20/02"));
+
+        return data;
     }
 
 }

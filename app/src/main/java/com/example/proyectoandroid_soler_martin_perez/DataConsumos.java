@@ -72,11 +72,11 @@ public class DataConsumos {
         this.correo = correo;
     }
 
-    public String getMes() {
+    public String getDia() {
         return dia;
     }
 
-    public void setMes(String dia) {
+    public void setDia(String dia) {
         this.dia = dia;
     }
 }

@@ -14,17 +14,21 @@ import java.util.ArrayList;
 
 public class AdapterConsumos extends RecyclerView.Adapter<AdapterConsumos.MyViewHolder> {
 
-    private ArrayList<DataConsumos> dataSet;
+    ArrayList<DataConsumos> dataSet;
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView textViewDia;
-        TextView textViewCoste;
+        TextView textViewDatos;
+        TextView textViewLlamadas;
+        TextView textViewMensajes;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             this.textViewDia = (TextView) itemView.findViewById(R.id.textViewDia);
-            this.textViewCoste = (TextView) itemView.findViewById(R.id.textViewCoste);
+            this.textViewDatos = (TextView) itemView.findViewById(R.id.textViewDatos);
+            this.textViewLlamadas = (TextView) itemView.findViewById(R.id.textViewLlamadas);
+            this.textViewMensajes = (TextView) itemView.findViewById(R.id.textViewMensajes);
         }
     }
 
@@ -35,20 +39,30 @@ public class AdapterConsumos extends RecyclerView.Adapter<AdapterConsumos.MyView
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.cardsconsumo_layout, parent, false);
 
-        view.setOnClickListener(consumos.myOnClickListener);
-
         MyViewHolder myViewHolder = new MyViewHolder(view);
         return myViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
+        TextView textViewDia = holder.textViewDia;
+        TextView textViewDatos = holder.textViewDatos;
+        TextView textViewLlamadas = holder.textViewLlamadas;
+        TextView textViewMensajes = holder.textViewMensajes;
 
+        String datosText = (dataSet.get(position).getDatosConsumidos() + " mb" + "\t\t\t" + dataSet.get(position).getCosteDatos() + "€");
+        String mensajesText = (dataSet.get(position).getMinutosLlamadas() + " minutos" + "\t\t\t" + dataSet.get(position).getCosteLlamadas() + "€");
+        String llamadasText = (dataSet.get(position).getMensajesEnviados() + " mensajes" + "\t\t\t" + dataSet.get(position).getCosteMensajes() + "€");
+
+        textViewDia.setText(dataSet.get(position).getDia());
+        textViewDatos.setText(datosText);
+        textViewLlamadas.setText(mensajesText);
+        textViewMensajes.setText(llamadasText);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return dataSet.size();
     }
 
 }
