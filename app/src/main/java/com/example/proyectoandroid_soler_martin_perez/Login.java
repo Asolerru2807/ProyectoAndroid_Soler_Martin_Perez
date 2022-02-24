@@ -68,8 +68,14 @@ public class Login extends AppCompatActivity {
                                     editor.putString("password", pass);
                                     editor.commit();
                                     AbrirMenu();
+                                }else{
+                                    Toast.makeText(Login.this,
+                                            "La contraseña esta mal escrita.", Toast.LENGTH_SHORT).show();
                                 }
                             }
+                        }else{
+                            Toast.makeText(Login.this,
+                                    "El Email no existe.", Toast.LENGTH_SHORT).show();
                         }
                         }
                     @Override
