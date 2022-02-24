@@ -78,7 +78,7 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback {
         LatLng ubicacionActual = new LatLng(Latitud, Longitud);
         mapa.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacionActual, 13.0f));
 
-        int markerNumber = (int)(Math.random() * 6);
+        int markerNumber = (int)(Math.random() * 5 + 1);
 
         for (int i = 0; i < markerNumber; i++){
             LatLng posicionAleatoria = getRandomLocation(ubicacionActual, 2000);

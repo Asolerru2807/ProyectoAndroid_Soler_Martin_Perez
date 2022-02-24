@@ -87,7 +87,6 @@ public class newUserMenu extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task2) {
                             if(task2.isSuccessful()){
                                 startActivity(new Intent(newUserMenu.this, usuario_creado.class));
-                                finish();
                             }else{
                                 Toast.makeText(newUserMenu.this, "No se pudieron crear los datos correctamente", Toast.LENGTH_SHORT).show();
                             }
