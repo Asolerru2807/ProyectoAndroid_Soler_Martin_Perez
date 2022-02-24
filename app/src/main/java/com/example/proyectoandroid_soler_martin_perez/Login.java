@@ -1,10 +1,13 @@
 package com.example.proyectoandroid_soler_martin_perez;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,51 +23,56 @@ import com.google.firebase.database.ValueEventListener;
 public class Login extends AppCompatActivity {
     FirebaseAuth mAuth;
     DatabaseReference mDataBase;
+    SharedPreferences datos;
     EditText user, password;
-    int contador;
+    String usuario, pass;
+    String [] nombre;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        user = findViewById(R.id.editTextTextEmailAddress);
-        password = findViewById(R.id.editTextTextPassword2);
+
+        //SharedPreferences.Editor editor = getSharedPreferences("datos", MODE_PRIVATE).edit();
+        //editor.clear().apply();
         Button boton = findViewById(R.id.Login);
         mAuth = com.google.firebase.auth.FirebaseAuth.getInstance();
         mDataBase = FirebaseDatabase.getInstance().getReference();
-
+        datos = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        if((datos.contains("usuario")&&(datos.contains("password")))) {
+            cargarDatos();
+        }
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Query nombre = mDataBase.orderByChild(String.valueOf(getString(R.string.nombre).equals(user)));
-                Query contrasenia = mDataBase.orderByChild(String.valueOf("pass".equals(password)));
-                //AbrirMenu();
-                nombre.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
+                user = findViewById(R.id.editTextTextEmailAddress);
+                password = findViewById(R.id.editTextTextPassword2);
+                usuario = user.getText().toString();
+                pass = password.getText().toString();
+                nombre= usuario.split("@");
+
+
+                mDataBase.child("Users").child("Clientes").child(nombre[0]).addValueEventListener(new ValueEventListener() {
+                        @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        contador = 0;
-                        for (DataSnapshot dataSnapshot: snapshot.getChildren()){
-                            contador ++;
-                            if (contador == 1){
-                                contrasenia.addListenerForSingleValueEvent(new ValueEventListener() {
-                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                        contador = 0;
-                                        for (DataSnapshot dataSnapshot: snapshot.getChildren()){
-                                            contador ++;
-                                            if (contador==1){
-                                                AbrirMenu();
-                                            }
-                                    }
+                        if (snapshot.exists()) {
+
+
+                            String nombredb = snapshot.child("correo").getValue().toString();
+                            String passwroddb = snapshot.child("pass").getValue().toString();
+
+                            if (nombredb.equals(usuario)) {
+                                if (passwroddb.equals(pass)){
+                                    datos = getSharedPreferences("datos", Context.MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = datos.edit();
+                                    editor.putString("usuario",usuario);
+                                    editor.putString("password", pass);
+                                    editor.commit();
+                                    AbrirMenu();
                                 }
-
-                                    @Override
-                                    public void onCancelled(@NonNull DatabaseError error) {
-
-                                    }
-                                });
                             }
                         }
-                    }
-
+                        }
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
 
@@ -76,9 +84,41 @@ public class Login extends AppCompatActivity {
 
 
     public void AbrirMenu(){
-        Intent intent = new Intent(this, Menu.class);
+        Intent intent = new Intent(Login.this, Menu.class);
         startActivity(intent);
     }
 
-}
+    public void cargarDatos() {
+
+         datos = getSharedPreferences("datos", Context.MODE_PRIVATE);
+
+            usuario = datos.getString("usuario", "");
+            pass = datos.getString("password", "");
+            nombre= usuario.split("@");
+
+            mDataBase.child("Users").child("Clientes").child(nombre[0]).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+
+
+                        String nombredb = snapshot.child("correo").getValue().toString();
+                        String passwroddb = snapshot.child("pass").getValue().toString();
+
+                        if (nombredb.equals(usuario)) {
+                            if (passwroddb.equals(pass)){
+                                AbrirMenu();
+                            }
+                        }
+                    }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+        }
+    }
+
 

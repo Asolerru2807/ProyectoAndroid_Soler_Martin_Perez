@@ -82,7 +82,7 @@ public class newUserMenu extends AppCompatActivity {
 
                     //String id = mAuth.getCurrentUser().getUid();
 
-                    mDataBase.child("Users").child("Clientes").child(nombre).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    mDataBase.child("Users").child("Clientes").child(correo).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task2) {
                             if(task2.isSuccessful()){
