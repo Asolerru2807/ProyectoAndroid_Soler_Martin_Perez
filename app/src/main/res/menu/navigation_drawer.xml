@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/item1"
+            android:icon="@drawable/www"
+            android:title="Nuestra web"
+             />
+        <item
+            android:id="@+id/item2"
+            android:icon="@drawable/bolsa"
+            android:title="Nuestras tiendas" />
+        <item
+            android:id="@+id/item3"
+            android:icon="@drawable/datos"
+            android:title="Tus gastos" />
+    </group>
+
+    <group
+        android:id="@+id/group2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/item4"
+            android:icon="@drawable/ask"
+            android:title="Dudas? Escribenos"
+            />
+        <item
+            android:id="@+id/item5"
+            android:icon="@drawable/cerrar"
+            android:title="Cerrar Sesion"
+            />
+    </group>
+
+</menu>
