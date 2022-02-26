@@ -36,7 +36,7 @@ public class Menu extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Menu.this, miPerfil.class);
+                Intent intent = new Intent(Menu.this, Buzon_Sugerencias.class);
                 startActivity(intent);;
             }
         });

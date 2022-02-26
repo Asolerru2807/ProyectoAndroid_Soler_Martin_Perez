@@ -12,18 +12,15 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Buzon_Sugerencias extends AppCompatActivity {
     Button button;
     EditText correo, asunto, mensaje;
-    String correoEmpresa;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gmail_sugerencias);
 
-        correo = findViewById(R.id.emailUser);
         asunto = findViewById(R.id.editTextAsunto);
         mensaje = findViewById(R.id.editTextMensaje);
-        correoEmpresa = "miguelmartin2694@gmail.com";
-
         button = findViewById(R.id.Enviar);
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -36,13 +33,17 @@ public class Buzon_Sugerencias extends AppCompatActivity {
 
     }
     private void mandarCorreo(){
-        Intent email = new Intent(Intent.ACTION_SENDTO);
+        String[] TO = {"miguelmartin2694@gmail.com"};
+        String[] CC = {""};
+        Intent email = new Intent(android.content.Intent.ACTION_SEND);
+        String mailId="abc.gmail.com";
         email.setData(Uri.parse("mailto: "));
         email.setType("text/plain");
-        email.putExtra(Intent.EXTRA_EMAIL, new String[]{correo.getText().toString()} );
+        email.putExtra(Intent.EXTRA_EMAIL, TO);
         email.putExtra(Intent.EXTRA_SUBJECT, asunto.getText().toString());
         email.putExtra(Intent.EXTRA_TEXT, mensaje.getText().toString());
-        startActivity(Intent.createChooser(email, "Send"));
+        startActivity(email.createChooser(email, "Envio correo"));
+
 
     }
 

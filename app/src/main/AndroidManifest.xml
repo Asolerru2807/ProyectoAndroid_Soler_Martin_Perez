@@ -28,13 +28,13 @@
             android:name=".newUserMenu"
             android:exported="false" />
         <activity
-            android:name=".Buzon_Sugerencias"
+            android:name=".Login"
             android:exported="false" />
         <activity
             android:name=".miPerfil"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".Buzon_Sugerencias"
             android:exported="false" />
         <activity
             android:name=".Menu"

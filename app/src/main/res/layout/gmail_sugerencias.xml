@@ -4,30 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black">
+    android:background="#2E2929">
 
     <LinearLayout
-        android:layout_width="391dp"
-        android:layout_height="433dp"
+        android:layout_width="409dp"
+        android:layout_height="439dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.127"
         tools:layout_editor_absoluteX="1dp">
-
-        <EditText
-            android:id="@+id/emailUser"
-            android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:backgroundTint="#9C27B0"
-            android:drawableTint="#FFFDFD"
-            android:ems="10"
-            android:hint="Email: "
-            android:inputType="textEmailAddress"
-            android:textColor="#FDFCFC"
-            android:textColorHint="@color/white">
-
-        </EditText>
 
         <EditText
             android:id="@+id/editTextAsunto"
@@ -45,7 +31,7 @@
         <EditText
             android:id="@+id/editTextMensaje"
             android:layout_width="match_parent"
-            android:layout_height="81dp"
+            android:layout_height="143dp"
             android:backgroundTint="#9C27B0"
             android:drawableTint="#FFFDFD"
             android:ems="140"
@@ -55,27 +41,25 @@
 
         </EditText>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="535dp">
+
+            <Button
+                android:id="@+id/Enviar"
+                android:layout_width="254dp"
+                android:layout_height="49dp"
+                android:background="@drawable/bordes_redondos"
+                android:text="Enviar"
+                android:textColor="#FDFCFC"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.31" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </LinearLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="535dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="273dp">
-
-        <Button
-            android:id="@+id/Enviar"
-            android:layout_width="254dp"
-            android:layout_height="49dp"
-            android:backgroundTint="#852AE0"
-            android:text="Enviar"
-            android:textColor="#FDFCFC"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.448" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
