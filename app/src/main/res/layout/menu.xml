@@ -20,14 +20,46 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/Titulo"
+                android:id="@+id/informacion"
                 android:layout_width="wrap_content"
-                android:layout_height="47dp"
+                android:layout_height="244dp"
+                android:layout_below="@+id/Titulo"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="112dp"
+                android:layout_marginStart="51dp"
+                android:layout_marginTop="65dp"
+                android:layout_marginEnd="50dp"
+                android:fontFamily="@font/cuprum" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="2dp"
+                android:layout_marginBottom="42dp"
+                android:layout_toEndOf="@+id/imageView"
+                android:fontFamily="@font/cuprum"
+                android:text="Dezliza para ver el menu"
+                android:textColor="#000000" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="56dp"
+                android:layout_height="51dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="30dp"
+                app:srcCompat="@drawable/fechaiz" />
+
+            <TextView
+                android:id="@+id/Titulo"
+                android:layout_width="235dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="89dp"
                 android:layout_marginTop="61dp"
-                android:layout_marginEnd="115dp"
+                android:layout_marginEnd="87dp"
                 android:fontFamily="@font/carme"
                 android:gravity="center"
                 android:text="@string/bienvenida"
