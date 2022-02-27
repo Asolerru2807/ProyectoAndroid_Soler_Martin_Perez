@@ -45,7 +45,7 @@ public class Menu extends AppCompatActivity {
             nombre= usuario.split("@");
             saludo.setText("Bienvenido: "+nombre[0]);
 
-            info.setText("Informaicón de cuenta\n\nNombre: "+nombre[0]+"\n\nCorreo Electronico: "+usuario);
+            info.setText("Información de cuenta\n\nNombre: "+nombre[0]+"\n\nCorreo Electronico: "+usuario);
         }
 
 
