@@ -51,13 +51,9 @@ public class Menu extends AppCompatActivity {
                     startActivity(newIntent);
                 }
                 else if(id == R.id.item2){
-                    Intent newIntent = new Intent(Menu.this, Mapa.class);
-                    startActivity(newIntent);
-                }
 
-                else if(id == R.id.item2){
-                    Intent newIntent = new Intent(Menu.this, Mapa.class);
-                    startActivity(newIntent);
+                    Intent intent = new Intent(Menu.this, Mapa.class);
+                    startActivity(intent);
                 }
 
                 else if(id == R.id.item3){
@@ -70,7 +66,7 @@ public class Menu extends AppCompatActivity {
                     startActivity(newIntent);
                 }
 
-                else if(id == R.id.item2){
+                else if(id == R.id.item5){
                     SharedPreferences.Editor editor = getSharedPreferences("datos", MODE_PRIVATE).edit();
                     editor.clear().apply();
                     Intent newIntent = new Intent(Menu.this, Login.class);
