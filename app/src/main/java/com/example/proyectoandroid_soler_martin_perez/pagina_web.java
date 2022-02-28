@@ -17,6 +17,7 @@ public class pagina_web extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pagina_web);
         miVisorWeb = (WebView) findViewById(R.id.pagina);
+        //Abre la pagina de la url en la aplicacion sin llevarte al navegador.
         final WebSettings ajustesVisorWeb = miVisorWeb.getSettings();
         ajustesVisorWeb.setJavaScriptEnabled(true);
         miVisorWeb.loadUrl(url);

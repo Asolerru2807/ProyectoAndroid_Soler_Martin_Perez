@@ -36,8 +36,11 @@ public class Login extends AppCompatActivity {
 
 
         Button boton = findViewById(R.id.Login);
+        //Conectamos con el firebase.
         mAuth = com.google.firebase.auth.FirebaseAuth.getInstance();
         mDataBase = FirebaseDatabase.getInstance().getReference();
+
+        //Comprueba si el usuario no cerro sesion para loguearlo de forma automatica.
         datos = getSharedPreferences("datos", Context.MODE_PRIVATE);
         if((datos.contains("usuario")&&(datos.contains("password")))) {
             cargarDatos();
@@ -51,17 +54,19 @@ public class Login extends AppCompatActivity {
                 pass = password.getText().toString();
                 nombre= usuario.split("@");
 
+
+                //Saca la información de la base de datos y la contrasta con lo escrito por el usuario en el login.
+                //Comienza contrastando con los admins.
                 mDataBase.child("Users").child("Admins").child(nombre[0]).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists()) {
-
-
                             String nombredb = snapshot.child("correo").getValue().toString();
                             String passwroddb = snapshot.child("pass").getValue().toString();
 
                             if (nombredb.equals(usuario)) {
                                 if (passwroddb.equals(pass)){
+                                    //Si el usuario esta bien conectado guarda la sesion iniciada y entra a la aplicacion
                                     datos = getSharedPreferences("datos", Context.MODE_PRIVATE);
                                     SharedPreferences.Editor editor = datos.edit();
                                     editor.putString("usuario",usuario);
@@ -78,7 +83,7 @@ public class Login extends AppCompatActivity {
                     }
                 });
 
-
+                //Realiza la misma accion pero con los clientes.
                 mDataBase.child("Users").child("Clientes").child(nombre[0]).addValueEventListener(new ValueEventListener() {
                         @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -90,6 +95,7 @@ public class Login extends AppCompatActivity {
 
                             if (nombredb.equals(usuario)) {
                                 if (passwroddb.equals(pass)){
+                                    //Si el usuario esta bien conectado guarda la sesion iniciada y entra a la aplicacion
                                     datos = getSharedPreferences("datos", Context.MODE_PRIVATE);
                                     SharedPreferences.Editor editor = datos.edit();
                                     editor.putString("usuario",usuario);
@@ -113,16 +119,20 @@ public class Login extends AppCompatActivity {
 
 
     public void AbrirMenu(){
+        //Abre la aplicacion desde el punto de vista del cliente.
         Intent intent = new Intent(Login.this, Menu.class);
         startActivity(intent);
     }
 
     public void AbrirAdmin(){
+        //Abre la aplicacion desde el punto de vista del administrador.
         Intent intent = new Intent(Login.this, newUserMenu.class);
         startActivity(intent);
     }
 
     public void cargarDatos() {
+
+        //carga los datos para que el usuario no se tenga que volver a loguear.
 
          datos = getSharedPreferences("datos", Context.MODE_PRIVATE);
 

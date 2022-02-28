@@ -18,7 +18,7 @@ public class Buzon_Sugerencias extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gmail_sugerencias);
-
+        //Recoge lo escrito por el usuario
         asunto = findViewById(R.id.editTextAsunto);
         mensaje = findViewById(R.id.editTextMensaje);
         button = findViewById(R.id.Enviar);
@@ -33,6 +33,8 @@ public class Buzon_Sugerencias extends AppCompatActivity {
 
     }
     private void mandarCorreo(){
+        //Aqui lo que hace es recoger lo que ha escrito el usuario y enviarlo.
+        //Este es el email al que se envian los correos.
         String[] TO = {"miguelmartin2694@gmail.com"};
         String[] CC = {""};
         Intent email = new Intent(android.content.Intent.ACTION_SEND);
@@ -42,6 +44,7 @@ public class Buzon_Sugerencias extends AppCompatActivity {
         email.putExtra(Intent.EXTRA_EMAIL, TO);
         email.putExtra(Intent.EXTRA_SUBJECT, asunto.getText().toString());
         email.putExtra(Intent.EXTRA_TEXT, mensaje.getText().toString());
+        //Esta linea lo que hace es que todo lo que vamos a enviar nos dejara elegir la plataforma a la que enviarlo.
         startActivity(email.createChooser(email, "Envio correo"));
 
 
