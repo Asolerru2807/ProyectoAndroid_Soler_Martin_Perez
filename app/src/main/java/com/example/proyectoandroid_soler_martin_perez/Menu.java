@@ -30,15 +30,27 @@ public class Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
 
+        /*
+        * Aqui busco los textos para para luego modificarlos y que se asignen con el usuario que ha entrado en la aplicacion
+        * */
         TextView saludo = (TextView) findViewById(R.id.Titulo);
         TextView info = (TextView) findViewById(R.id.informacion);
 
-
+        /*
+        * Aquí busco el fab
+        * */
         FloatingActionButton fab = findViewById(R.id.fab);
 
+        /*
+         * Aquí busco el menu
+         * */
         NavigationView navigation = (NavigationView) findViewById(R.id.navigation);
 
-
+        /*
+        * Aquí busco si hay datos guardados en las preferencias para que salga por pantalla el nombre y el correo
+        *
+        *
+        * */
         datos = getSharedPreferences("datos", Context.MODE_PRIVATE);
         usuario = datos.getString("usuario", "");
         if((datos.contains("usuario")&&(datos.contains("password")))) {
@@ -48,7 +60,9 @@ public class Menu extends AppCompatActivity {
             info.setText("Información de cuenta\n\nNombre: "+nombre[0]+"\n\nCorreo Electronico: "+usuario);
         }
 
-
+        /*
+        * Asigno un escuchador al fab para que cuando se pulse sobre inicie la actividad del buzon de sugerencias
+        * */
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,6 +71,9 @@ public class Menu extends AppCompatActivity {
             }
         });
 
+        /*
+        * Asigno un escuchador al menu para que en cada boton que se pulse inicie la actividad correspondiente
+        * */
         navigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
 
             @Override
