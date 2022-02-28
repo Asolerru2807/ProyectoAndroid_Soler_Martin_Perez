@@ -3,11 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ANDROID PROJECTOS/PROYECTOFINAL/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.128" />
         <entry key="..\:/ANDROID PROJECTOS/PROYECTOFINAL/app/src/main/res/drawable/bordes_redondos.xml" value="0.312" />
+        <entry key="..\:/ANDROID PROJECTOS/PROYECTOFINAL/app/src/main/res/drawable/carga.xml" value="0.128" />
+        <entry key="..\:/ANDROID PROJECTOS/PROYECTOFINAL/app/src/main/res/drawable/ic_launcher_background.xml" value="0.128" />
         <entry key="..\:/ANDROID PROJECTOS/PROYECTOFINAL/app/src/main/res/layout/activity_consumos.xml" value="0.2749094202898551" />
         <entry key="..\:/ANDROID PROJECTOS/PROYECTOFINAL/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/ANDROID PROJECTOS/PROYECTOFINAL/app/src/main/res/layout/activity_mapa.xml" value="0.1" />
         <entry key="..\:/ANDROID PROJECTOS/PROYECTOFINAL/app/src/main/res/layout/activity_mi_perfil.xml" value="0.36666666666666664" />
+        <entry key="..\:/ANDROID PROJECTOS/PROYECTOFINAL/app/src/main/res/layout/activity_pantalla_carga.xml" value="0.34148550724637683" />
         <entry key="..\:/ANDROID PROJECTOS/PROYECTOFINAL/app/src/main/res/layout/gmail_sugerencias.xml" value="0.21603260869565216" />
         <entry key="..\:/ANDROID PROJECTOS/PROYECTOFINAL/app/src/main/res/layout/header_navigation_drawer.xml" value="0.36666666666666664" />
         <entry key="..\:/ANDROID PROJECTOS/PROYECTOFINAL/app/src/main/res/layout/menu.xml" value="0.33" />
