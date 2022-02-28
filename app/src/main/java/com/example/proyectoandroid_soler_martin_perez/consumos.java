@@ -16,6 +16,10 @@ import java.util.ArrayList;
 
 public class consumos extends AppCompatActivity {
 
+    /*
+     * Clase que gestionara los consumos de cada usuario y hara que
+     * se muestren en la app mediante un adaptador
+     */
     private static RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private static RecyclerView recyclerView;
@@ -41,6 +45,7 @@ public class consumos extends AppCompatActivity {
         datos = getSharedPreferences("datos", Context.MODE_PRIVATE);
         usuarioLogeado = datos.getString("usuario", "");
 
+        //Recorremos el array de todos los consumos filtrando por el usuario logeado
         for (int i = 0; i < data.size(); i++){
             DataConsumos datoActual = data.get(i);
             if(datoActual.getCorreo().equals(usuarioLogeado)){
@@ -48,11 +53,13 @@ public class consumos extends AppCompatActivity {
             }
         }
 
+        //Creamos el adaptador con los datos del usuario logeado para rellenar el cardview con los datos correspondientes
         adapter = new AdapterConsumos(datosUsuarioLogeado);
         recyclerView.setAdapter(adapter);
 
     }
 
+    //Metodo para la creacion de los datos de cada usuario
     public ArrayList<DataConsumos> creacionDatos(){
         /*
          * Orden de introduccion de los datos:

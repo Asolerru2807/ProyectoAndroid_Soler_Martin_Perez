@@ -25,6 +25,10 @@ import java.util.Map;
 
 public class newUserMenu extends AppCompatActivity {
 
+    /*
+     * Clase mediante la que realizamos la creacion de usuarios en la base de datos
+     * (Solo administradores de la aplicacion)
+     */
     private EditText mEditTextNombre;
     private EditText mEditTextCorreo;
     private EditText mEditTextPass;
@@ -84,6 +88,7 @@ public class newUserMenu extends AppCompatActivity {
     }
 
     private void RegistrarUsuario(){
+        //Metodo para el registro de usuarios
         mAuth.createUserWithEmailAndPassword(correo, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>(){
             @Override
             public void onComplete(@NonNull Task<AuthResult> task){

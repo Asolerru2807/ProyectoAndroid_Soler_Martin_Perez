@@ -13,7 +13,9 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class AdapterConsumos extends RecyclerView.Adapter<AdapterConsumos.MyViewHolder> {
-
+    /*
+    * Esta clase funcionara como adaptador para el Card View de consumos
+    */
     ArrayList<DataConsumos> dataSet;
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
@@ -32,6 +34,7 @@ public class AdapterConsumos extends RecyclerView.Adapter<AdapterConsumos.MyView
         }
     }
 
+    //Constructor del adaptador
     public AdapterConsumos(ArrayList<DataConsumos> data) { this.dataSet = data;}
 
     @Override
@@ -45,6 +48,7 @@ public class AdapterConsumos extends RecyclerView.Adapter<AdapterConsumos.MyView
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
+        //Recogemos todos los text view de consumos y los rellenamos con sus datos correspondientes para mostrar por pantalla
         TextView textViewDia = holder.textViewDia;
         TextView textViewDatos = holder.textViewDatos;
         TextView textViewLlamadas = holder.textViewLlamadas;

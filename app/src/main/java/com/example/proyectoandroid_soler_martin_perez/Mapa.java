@@ -27,6 +27,9 @@ import java.util.Random;
 
 public class Mapa extends FragmentActivity implements OnMapReadyCallback {
 
+    /*
+     *Clase que muestra el mapa con un numero aleatorio de tiendas (de 1 a 5) en un rango de 2km del usuario
+     */
     private double Latitud, Longitud;
 
     @Override
@@ -78,8 +81,10 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback {
         LatLng ubicacionActual = new LatLng(Latitud, Longitud);
         mapa.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacionActual, 13.0f));
 
+        //Numero de marcadores aleatorio de (1 a 5)
         int markerNumber = (int)(Math.random() * 5 + 1);
 
+        //Creacion de los marcadores
         for (int i = 0; i < markerNumber; i++){
             LatLng posicionAleatoria = getRandomLocation(ubicacionActual, 2000);
             mapa.addMarker(new MarkerOptions()
@@ -90,6 +95,10 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback {
     }
 
     public LatLng getRandomLocation(LatLng myLocation, int radius) {
+        /*
+         * Metodo que mediante la posicion del usuario crea una posicion aleatoria en
+         * un radio que se defina por parametros (en nuestro caso 2km)
+         */
         double x0 = myLocation.latitude;
         double y0 = myLocation.longitude;
 

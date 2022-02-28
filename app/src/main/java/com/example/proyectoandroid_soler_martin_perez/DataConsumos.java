@@ -1,6 +1,10 @@
 package com.example.proyectoandroid_soler_martin_perez;
 
 public class DataConsumos {
+
+    /*
+     * Objeto que almacena los datos de cada consumo de un usuario
+     */
     double datosConsumidos, costeDatos, costeLlamadas, costeMensajes;
     int minutosLlamadas, mensajesEnviados;
     String correo, dia;
