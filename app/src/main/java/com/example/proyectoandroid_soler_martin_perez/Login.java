@@ -51,40 +51,6 @@ public class Login extends AppCompatActivity {
                 pass = password.getText().toString();
                 nombre= usuario.split("@");
 
-
-                mDataBase.child("Users").child("Clientes").child(nombre[0]).addValueEventListener(new ValueEventListener() {
-                        @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if (snapshot.exists()) {
-
-
-                            String nombredb = snapshot.child("correo").getValue().toString();
-                            String passwroddb = snapshot.child("pass").getValue().toString();
-
-                            if (nombredb.equals(usuario)) {
-                                if (passwroddb.equals(pass)){
-                                    datos = getSharedPreferences("datos", Context.MODE_PRIVATE);
-                                    SharedPreferences.Editor editor = datos.edit();
-                                    editor.putString("usuario",usuario);
-                                    editor.putString("password", pass);
-                                    editor.commit();
-                                    AbrirMenu();
-                                }else{
-                                    Toast.makeText(Login.this,
-                                            "La contraseña esta mal escrita.", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        }else{
-                            Toast.makeText(Login.this,
-                                    "El Email no existe.", Toast.LENGTH_SHORT).show();
-                        }
-                        }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-
                 mDataBase.child("Users").child("Admins").child(nombre[0]).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -111,6 +77,36 @@ public class Login extends AppCompatActivity {
 
                     }
                 });
+
+
+                mDataBase.child("Users").child("Clientes").child(nombre[0]).addValueEventListener(new ValueEventListener() {
+                        @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists()) {
+
+
+                            String nombredb = snapshot.child("correo").getValue().toString();
+                            String passwroddb = snapshot.child("pass").getValue().toString();
+
+                            if (nombredb.equals(usuario)) {
+                                if (passwroddb.equals(pass)){
+                                    datos = getSharedPreferences("datos", Context.MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = datos.edit();
+                                    editor.putString("usuario",usuario);
+                                    editor.putString("password", pass);
+                                    editor.commit();
+                                    AbrirMenu();
+                                }
+                            }
+                        }
+                        }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+
             }
         });
     }
